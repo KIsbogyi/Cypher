@@ -1,16 +1,4 @@
 #include <iostream>
-
-/*
-class XOR{
-    char *key;
-    char *cyphertext
-
-    public:
-        XOR(){}
-};
-*/
-
-
 int stringtoint(const char* str){
     int tmp = str[0];
     for(int i = 1; i < strlen(str); i++){
@@ -20,8 +8,23 @@ int stringtoint(const char* str){
     return tmp;
 
 }
+char * inttostring(int number){
+    char *tmp = new char[0]
+    while(number != 0){
+        char *temp;
+        strcat(temp, tmp);
+        delete[] tmp;
+        char *tmp = new char[strlen(temp)+2]
+        strcat(tmp, number % 100);
+        number = number/100;
+    }
+    char *ret;
+    strcat(ret, tmp);
+    delete[] tmp;
+    return ret;
+}
+
 
 char * XOR(const char *key, const char* text){
-    return key ^ text;
-
+    return stringtoint(key) ^ stringtoint(text);
 }
